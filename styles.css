@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(242, 242, 242, 0.8); /* Reduce background brightness */
+}
+
+.background-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6); /* Adjust background image brightness */
+}
+
+.header {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .company-name {
+    margin-left: 20px;
+    font-size: 24px;
+}
+
+.header .links {
+    margin-right: 20px;
+}
+
+.header a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+    justify-items: center;
+    margin-top: 40px; /* Add margin to start grid after introduction */
+}
+
+.main-content div {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.pricing {
+    grid-column: span 2;
+}
+
+.introduction {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque white background */
+    padding: 40px;
+    border-radius: 15px; /* Increased border radius for a softer look */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Slightly increased box shadow */
+    margin-top: 40px; /* Increased margin for better separation */
+    text-align: center; /* Center-align text */
+}
+
+.introduction h1 {
+    color: #333; /* Darkened text color for better readability */
+}
+
+.introduction p {
+    color: #555; /* Slightly darker text color */
+    line-height: 1.6; /* Improved line spacing for better readability */
+}

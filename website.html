@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Waste Monitoring System</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+    
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .background-container {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .background-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.6);
+        }
+        .header {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header .company-name {
+            margin-left: 20px;
+            font-size: 24px;
+        }
+        .header .links {
+            margin-right: 20px;
+        }
+        .header a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        .container {
+            display: flex;
+            justify-content: flex-end; /* Align main content to the right initially*/
+            align-items: center;
+            flex-direction: column;
+        }
+        /* Introduction section styles */
+        .introduction {
+            background-color: rgba(255, 255, 255, 0.5); /* White background with opacity */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-top: 20px; /* Add margin to top */
+            transition: opacity 1s; /* Slow transition effect */
+        }
+        /* Main content styles */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            margin-top: 20px; /* Add margin to top */
+            transition: opacity 1s; /* Slow transition effect */
+            opacity: 0; /* Initially hidden */
+            max-width: 100%;
+        }
+        .main-content div {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px; /* Set a fixed width */
+            height: 300px; /* Set a fixed height */
+            margin-top: 20px; /* Add margin between elements */
+        }
+        .main-content div:nth-child(even) {
+            align-self: flex-end; /* Align even elements to the right */
+        }
+        .main-content div:nth-child(odd) {
+            align-self: flex-start; /* Align odd elements to the left */
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container">
+        <img src="ewastepic.jpeg" alt="Background Image" class="background-image">
+    </div>
+    <div class="header">
+        <div class="company-name">Company Name</div>
+        <div class="links">
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="#">About Us</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="introduction">
+            <h1>Welcome to the E-Waste Monitoring System</h1>
+            <p>Welcome to our platform dedicated to managing electronic waste efficiently and sustainably. As technology advances, the disposal of electronic devices has become a significant environmental concern. Our system aims to address this issue by providing comprehensive solutions for e-waste management.</p>
+            <p>With our platform, you can track the lifecycle of electronic devices, from procurement to disposal, ensuring proper handling and recycling of materials. We collaborate with certified recycling facilities to minimize environmental impact and promote a circular economy.</p>
+            <p>Join us in our mission to create a cleaner and more sustainable future. Together, we can make a difference in reducing e-waste and preserving our planet for future generations.</p>
+        </div>
+        <div class="main-content">
+            <div>
+                <h2>What is E-Waste Management?</h2>
+                <p>E-Waste management involves the proper disposal and recycling of electronic devices to reduce environmental impact.</p>
+            </div>
+            <div>
+                <h2>Timely Collection</h2>
+                <p>We ensure timely collection of e-waste from your premises to maintain a clean and sustainable environment.</p>
+                <img src="collection.jpg" alt="Timely Collection Image">
+            </div>
+            <div>
+                <h2>Pricing</h2>
+                <p>Our pricing plans are tailored to suit your needs. Contact us for more details.</p>
+                <button class="pricing-button">Join Now</button>
+            </div>
+            <div>
+                <h2>Feedback Mechanism</h2>
+                <p>We value your feedback. Our system includes a robust mechanism for collecting and acting upon customer feedback.</p>
+                <img src="#" alt="Feedback Mechanism Image">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fade in elements when scrolled into view
+        window.addEventListener('scroll', function() {
+            var introduction = document.querySelector('.introduction');
+            var mainContent = document.querySelector('.main-content');
+            var scrollPosition = window.scrollY || window.pageYOffset; // Cross-browser support
+            var windowHeight = window.innerHeight;
+
+            // Check if the introduction section is in view
+            if (introduction.getBoundingClientRect().top < windowHeight / 2) {
+                introduction.style.opacity = 1;
+            }
+
+            // Check if the main content is in view
+            if (mainContent.getBoundingClientRect().top < windowHeight / 2) {
+                mainContent.style.opacity = 1;
+            }
+        });
+    </script>
+</body>
+</html>
