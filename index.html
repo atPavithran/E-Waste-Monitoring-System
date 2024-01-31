@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Waste Monitoring System</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .background-container {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .background-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(1);
+        }
+
+        .header {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 7px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1;
+            transition: padding 0.5s ease-out; /* Added transition for padding */
+        }
+
+        .header.active {
+            padding: 7px 320px 7px 7px; /* Adjusted padding when sidebar is active */
+        }
+
+        .header .hamburger-menu {
+            display: block;
+            cursor: pointer;
+            font-size: 30px;
+            padding: 5px;
+            margin-right: 10px;
+        }
+
+        .header .company-name {
+            font-size: 24px;
+            margin-left: 10px;
+            order: -1; /* Move company name to the beginning */
+        }
+
+        .header .links {
+            display: flex;
+            margin-right: 20px;
+            justify-content: right;
+            transition: max-height 0.5s ease-out;
+            overflow: hidden;
+            max-height: 50px;
+        }
+
+        .header.active .links {
+            max-height: 200px;
+        }
+
+        .header a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 10px;
+            display: block;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: -300px;
+            top: 60px;
+            width: 300px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: left 0.5s ease-out, opacity 0.5s ease-out; /* Added opacity transition */
+            opacity: 0;
+        }
+
+        .sidebar.active {
+            left: 0;
+            opacity: 1;
+        }
+
+        .container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 60px;
+        }
+
+        .introduction {
+            background-color: rgb(255, 255, 255);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-top: 0px;
+            transition: opacity 1s;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            margin-top: 20px;
+            transition: opacity 1s;
+            opacity: 0;
+            max-width: 100%;
+        }
+
+        .main-content div {
+            background-color: rgb(255, 255, 255);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+            height: 300px;
+            margin-top: 20px;
+        }
+
+        .main-content div:nth-child(even) {
+            align-self: flex-end;
+        }
+
+        .main-content div:nth-child(odd) {
+            align-self: flex-start;
+        }
+
+        @media screen and (max-width: 768px) {
+            .header .links {
+                max-height: 0;
+            }
+
+            .header.active .links {
+                max-height: 200px;
+            }
+
+            .sidebar {
+                top: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container">
+        <img src="ewastepic.jpeg" alt="Background Image" class="background-image">
+    </div>
+    <div class="header">
+        <div class="hamburger-menu" onclick="toggleSidebar()">&#9776;</div>
+        <div class="company-name">Company Name</div>
+        <div class="links">
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="#">About Us</a>
+        </div>
+    </div>
+    <div class="sidebar">
+        <h2>About Us</h2>
+        <p>Welcome to our E-Waste Monitoring System. We are dedicated to managing electronic waste efficiently and sustainably...</p>
+    </div>
+    <div class="container">
+        <div class="introduction">
+            <h1>Welcome to the E-Waste Monitoring System</h1>
+            <p>Welcome to our platform dedicated to managing electronic waste efficiently and sustainably...</p>
+        </div>
+        <div class="main-content">
+            <div>
+                <h2>What is E-Waste Management?</h2>
+                <p>E-Waste management involves the proper disposal and recycling of electronic devices to reduce environmental impact.</p>
+            </div>
+            <div>
+                <h2>Timely Collection</h2>
+                <p>We ensure timely collection of e-waste from your premises to maintain a clean and sustainable environment.</p>
+                <img src="collection.jpg" alt="Timely Collection Image">
+            </div>
+            <div>
+                <h2>Pricing</h2>
+                <p>Our pricing plans are tailored to suit your needs. Contact us for more details.</p>
+                <button class="pricing-button">Join Now</button>
+            </div>
+            <div>
+                <h2>Feedback Mechanism</h2>
+                <p>We value your feedback. Our system includes a robust mechanism for collecting and acting upon customer feedback.</p>
+                <img src="#" alt="Feedback Mechanism Image">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            var header = document.querySelector('.header');
+            var sidebar = document.querySelector('.sidebar');
+            header.classList.toggle('active');
+            sidebar.classList.toggle('active');
+        }
+
+        window.addEventListener('scroll', function () {
+            var introduction = document.querySelector('.introduction');
+            var mainContent = document.querySelector('.main-content');
+            var scrollPosition = window.scrollY || window.pageYOffset;
+            var windowHeight = window.innerHeight;
+
+            if (introduction.getBoundingClientRect().top < windowHeight / 2) {
+                introduction.style.opacity = 1;
+            }
+
+            if (mainContent.getBoundingClientRect().top < windowHeight / 2) {
+                mainContent.style.opacity = 1;
+            }
+        });
+    </script>
+</body>
+</html>
