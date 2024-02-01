@@ -1,90 +1,119 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset styles */
+* {
     margin: 0;
     padding: 0;
-    background-color: rgba(242, 242, 242, 0.8); /* Reduce background brightness */
+    box-sizing: border-box;
 }
 
-.background-container {
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    background-image: url('ewastepic.jpeg'); /* Add background image */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Header styles */
+.header {
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    padding: 10px 0;
+    height: 50px;
     position: fixed;
     width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
+    top: 0;
+    z-index: 1000; /* Ensure the header stays on top of other content */
+     /* Add shadow */
 }
 
-.background-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.6); /* Adjust background image brightness */
-}
-
-.header {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 10px;
+.container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.header .company-name {
-    margin-left: 20px;
-    font-size: 24px;
+.header-left {
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
 }
 
-.header .links {
+.hamburger-menu {
+    font-size: 23px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.company-name {
+    font-size: 24px;
+    margin-left: 15px;
+}
+
+.header-right a {
+    color: #fff;
+    text-decoration: none;
     margin-right: 20px;
 }
 
-.header a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 10px;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.main-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 20px;
-    padding: 20px;
-    justify-items: center;
-    margin-top: 40px; /* Add margin to start grid after introduction */
-}
-
-.main-content div {
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-
-.pricing {
-    grid-column: span 2;
-}
-
+/* Introduction styles */
 .introduction {
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque white background */
+    background-color: #fff;
     padding: 40px;
-    border-radius: 15px; /* Increased border radius for a softer look */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Slightly increased box shadow */
-    margin-top: 40px; /* Increased margin for better separation */
-    text-align: center; /* Center-align text */
+    border-radius: 10px;
+    margin-top: 70px; /* Ensure space below the fixed header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow */
 }
 
 .introduction h1 {
-    color: #333; /* Darkened text color for better readability */
+    color: #333;
 }
 
 .introduction p {
-    color: #555; /* Slightly darker text color */
-    line-height: 1.6; /* Improved line spacing for better readability */
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Main content styles */
+.main-content {
+    margin-top: 20px;
+}
+
+.section {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow */
+    margin-bottom: 20px; /* Space between sections */
+}
+
+.section h2 {
+    color: #333;
+}
+
+.section p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.section img {
+    max-width: 100%;
+}
+
+/* Sidebar styles */
+.sidebar {
+    margin-top: -21px;
+    position: fixed;
+    left: -300px;
+    height: 100%;
+    top: 70px; /* Ensure space below the fixed header */
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    transition: left 0.5s ease-out; /* Add transition effect */
+    z-index: 1000; /* Ensure the sidebar stays on top of other content */
+}
+
+.sidebar.active {
+    left: 0;
 }
