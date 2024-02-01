@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Waste Monitoring System</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Custom CSS for animations -->
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fadeInUp {
+            animation-name: fadeInUp;
+            animation-duration: 1s;
+            animation-timing-function: ease-out;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <header class="bg-black text-white py-4 fixed top-0 w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="flex items-center">
+                <div class="hamburger-menu text-2xl cursor-pointer mr-4" onclick="toggleSidebar()">&#9776;</div>
+                <div class="company-name text-xl">Company Name</div>
+            </div>
+            <div class="header-links">
+                <a href="#" class="mr-4">Login</a>
+                <a href="#" class="mr-4">Sign Up</a>
+                <a href="#" class="mr-4">About Us</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="introduction bg-white shadow-md py-8 mt-16 mx-auto w-3/4 rounded-lg text-center animate-fadeInUp">
+        <div class="container mx-auto">
+            <h1 class="text-4xl mb-4">Welcome to the E-Waste Monitoring System</h1>
+            <p class="text-lg">Welcome to our platform dedicated to managing electronic waste efficiently and sustainably...</p>
+        </div>
+    </div>
+
+    <div class="main-content mt-8">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="section bg-white shadow-md rounded-lg p-6 animate-fadeInUp">
+                <h2 class="text-2xl mb-4">What is E-Waste Management?</h2>
+                <p>E-Waste management involves the proper disposal and recycling of electronic devices to reduce environmental impact.</p>
+            </div>
+            <div class="section bg-white shadow-md rounded-lg p-6 animate-fadeInUp">
+                <h2 class="text-2xl mb-4">Timely Collection</h2>
+                <p>We ensure timely collection of e-waste from your premises to maintain a clean and sustainable environment.</p>
+                <img src="collection.jpg" alt="Timely Collection Image" class="mt-4">
+            </div>
+            <div class="section bg-white shadow-md rounded-lg p-6 animate-fadeInUp">
+                <h2 class="text-2xl mb-4">Pricing</h2>
+                <p>Our pricing plans are tailored to suit your needs. Contact us for more details.</p>
+                <button class="bg-black text-white px-4 py-2 rounded mt-4">Join Now</button>
+            </div>
+            <div class="section bg-white shadow-md rounded-lg p-6 animate-fadeInUp">
+                <h2 class="text-2xl mb-4">Feedback Mechanism</h2>
+                <p>We value your feedback. Our system includes a robust mechanism for collecting and acting upon customer feedback.</p>
+                <img src="#" alt="Feedback Mechanism Image" class="mt-4">
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar bg-black text-white fixed top-0 left-0 h-full w-0 transition-all duration-300 overflow-hidden mt-16 z-50">
+        <div class="container mx-auto py-8">
+            <h2 class="text-2xl mb-4">About Us</h2>
+            <p>Welcome to our E-Waste Monitoring System. We are dedicated to managing electronic waste efficiently and sustainably...</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.querySelector('.sidebar');
+            var hamburger = document.querySelector('.hamburger-menu');
+            sidebar.classList.toggle('w-64');
+            if (sidebar.classList.contains('w-64')) {
+                // Change the hamburger menu to another icon (cross icon)
+                hamburger.innerHTML = '&#10006;';
+            } else {
+                // Revert the hamburger menu back to the original icon
+                hamburger.innerHTML = '&#9776;';
+            }
+        }
+
+        document.querySelector('.sidebar').addEventListener('click', function () {
+            this.classList.remove('w-64');
+            document.querySelector('.hamburger-menu').innerHTML = '&#9776;';
+        });
+    </script>
+</body>
+
+</html>

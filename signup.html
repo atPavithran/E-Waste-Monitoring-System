@@ -12,7 +12,10 @@
             background-color: #f2f2f2;
         }
         .header {
-            background-color: rgba(0, 0, 0, 0.8); /* Add a semi-transparent background color to the header */
+            position: fixed;
+            top: 0%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 1);
             color: #fff;
             padding: 10px;
             display: flex;
@@ -20,11 +23,12 @@
             align-items: center;
         }
         .header .company-name {
-            margin-left: 20px;
+            margin-left: 10px;
             font-size: 24px;
         }
         .header .links {
-            margin-right: 20px;
+            margin-right: 40px;
+
         }
         .header a {
             color: #fff;
@@ -66,14 +70,22 @@
         .signup-form button:hover {
             background-color: #555;
         }
+        .signup-container .become-delivery-partner {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .signup-container .become-delivery-partner a {
+            color: #333;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
     <div class="header">
-        <div class="company-name"><a href="website.html" style="color: inherit; text-decoration: none;">Company Name</a></div>
+        <div class="company-name"><a href="index.html" style="color: inherit; text-decoration: none;">Company Name</a></div>
         <div class="links">
-            <a href="login.html">Login</a> <!-- Link to the login page -->
-            <a href="#">About Us</a>
+            <a href="login.html">Login</a>
+            <a href="aboutus.html">About Us</a>
         </div>
     </div>
     <div class="signup-container">
@@ -85,6 +97,9 @@
             <input type="password" name="confirm_password" placeholder="Confirm Password" required>
             <button type="submit">Sign Up</button>
         </form>
+        <div class="become-delivery-partner">
+            <a href="become_delivery_partner.html">Become a delivery partner?</a>
+        </div>
     </div>
 </body>
 </html>

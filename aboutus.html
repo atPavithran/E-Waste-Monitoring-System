@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - E-Waste Monitoring System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .background-container {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .header {
+            position: fixed;
+            top: 0%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 1);
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header .company-name {
+            margin-left: 10px;
+            font-size: 24px;
+        }
+        .header .links {
+            margin-right: 40px;
+
+        }
+        .header a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 60px;
+        }
+
+        .about-us-content {
+            background-color: rgb(255, 255, 255);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-top: 0px;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .header .links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: rgba(0, 0, 0, 0.8);
+                padding: 10px;
+            }
+
+            .header.active .links {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container">
+    </div>
+    <div class="header">
+        <div class="company-name"><a href="index.html" style="color: inherit; text-decoration: none;">Company Name</a></div>
+        <div class="links">
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="about-us-content">
+            <h1>About Us</h1>
+            <p>The E-Waste Monitoring System streamlines e-waste management through three modules: Collect, Monitor, and Recycle. Notably, it offers distinct logins for organisations (customers - private and government organisations), employees (service-provider), and waste collection workers, ensuring tailored access and functionality.</p>
+            <p><strong>Collect:</strong> Periodic scheduling for e-waste collections is established for the organisations, fostering a systematic approach to e-waste management. Users are allowed to submit requests for e-waste collection. The platform ensures timely communication through upcoming collection alerts, notifying organisations about scheduled e-waste collections. An analytics tool is integrated to generate insights into e-waste trends and patterns, facilitating informed decision-making.</p>
+            <p><strong>Monitor:</strong> It enhances e-waste management by offering real-time visibility and control. Inventory features provide efficient oversight, offering real-time insights into collected electronic items. Live GPS tracking monitors e-waste movement, ensuring transparency and accountability from collection to recycling. The system maintains a comprehensive database of reports on schedules, collected quantities, and recycling centre locations in India.</p>
+            <p><strong>Recycle:</strong> The Recycle module streamlines the process of identifying suitable recycling centres for organisations, while an acknowledgment system on the employee side receives a notification upon successful e-waste drop-off, fostering a sense of completion and adherence to proper disposal practices. A feedback mechanism is also integrated. Users are encouraged to provide feedback on the entire process of e-waste disposal, promoting a culture of continuous improvement.</p>
+        </div>
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p>Email: info@companyname.com</p>
+            <p>Phone: +123 456 7890</p>
+            <p>Address: 123 Green Street, EcoCity, Earth</p>
+        </div>
+    </div>
+</body>
+</html>
