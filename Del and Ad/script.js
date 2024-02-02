@@ -23,27 +23,12 @@ body {
 }
 
 .sidebar-image {
-    background-image: url('pD:\CMRRRRR\E-Waste-Monitoring-System\Del and Ad\img\icon.png'); /* Replace with the actual path to your sidebar image */
+    background-image: url('path/to/your/image.jpg');
     background-size: cover;
     width: 100%;
     height: 60px;
     border-radius: 50%;
     margin-bottom: 20px;
-}
-
-.sidebar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.sidebar-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: white;
-    font-size: 24px;
 }
 
 .sidebar-links {
